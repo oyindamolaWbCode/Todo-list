@@ -124,12 +124,19 @@ input[type="text"]{
     text-align: center;
     margin:0 auto;
     display:flex;
+    flex-direction: row; 
     margin-top:20px;
     padding:10px 15px;
     background-color:var(--very-dark-blue);
     color: hsl(234, 11%, 52%);
     justify-content: space-between;
+   
 }
+
+/* .delete img{
+    display:flex;
+    justify-content: flex-start;
+} */
 
 
 #bottom-section{
