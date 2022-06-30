@@ -159,3 +159,12 @@ input[type="text"]{
 .last-para{
     margin-top:70px;
 }
+
+.toggler{
+    align-self: center;
+    cursor:grabbing;
+}
+
+.toggler:hover{
+    transform: scale(1.2);
+}
