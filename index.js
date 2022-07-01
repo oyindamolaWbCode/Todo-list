@@ -16,7 +16,7 @@ const container = document.querySelector('.container-mylist');
 const del = document.querySelector('.delete');
 const body =document.querySelector('body');
 const card = document.querySelector('.card');
-
+const img = document.querySelector("img")
 
 //alert message when inputed not filled
 
@@ -63,31 +63,36 @@ function containerList(){
 }
 
 //change of theme
-function togglerTheme(){
+//togglelight
 
-toggleLight();
+  document.querySelector(".toggler").addEventListener('click', toggleLight)
 
+//toggledark
+if(toggler === 'toggleLight'){
+  document.querySelector(".toggler").addEventListener('click', toggleDark);
+
+}else{
+  document.querySelector(".toggler").addEventListener('click', toggleLight)
+}
+  
+function toggleLight(){
+  body.style.backgroundImage="url('./images/bg-desktop-light.jpg')";
+  body.style.backgroundRepeat = 'no-repeat';
+  toggler.src="./images/icon-moon.svg";
+  body.style.backgroundColor='hsl(233, 11%, 84%)';
+  container.style.backgroundColor='hsl(233, 11%, 84%)';
+  document.querySelector('.toggler').addEventListener('click',toggleDark)
 }
 
 
 function toggleDark(){
-  body.style.background = 'var(--very-dark-blue)';
   body.style.backgroundImage = 'url(./images/bg-desktop-dark.jpg)';
   body.style.backgroundRepeat = 'no-repeat';
+  body.style.backgroundSize ='contain';
   toggler.src="./images/icon-sun.svg";
-  card.style.backgroundColor='var(--very-dark-desaturated-blue)';
-   document.querySelector('.toggler').addEventListener('click',toggleLight)
- 
+  body.style.backgroundColor='black';
+  document.querySelector('.toggler').addEventListener('click',toggleLight) 
   }
 
-function toggleLight(){
-  body.style.color ='white';
-  body.style.backgroundImage="url('./images/bg-desktop-light.jpg')";
-  body.style.backgroundRepeat = 'no-repeat';
-  body.style.color = 'var(--very-dark-grayish-blue)';
-  toggler.src="./images/icon-moon.svg";
-  card.style.backgroundColor='hsl(233, 11%, 84%)';
-  container.style.backgroundColor='hsl(233, 11%, 84%)';
-  document.querySelector('.toggler').addEventListener('click',toggleDark)
-}
+
 
