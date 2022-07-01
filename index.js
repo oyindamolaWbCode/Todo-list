@@ -65,11 +65,12 @@ function containerList(){
 //change of theme
 //togglelight
 
-  document.querySelector(".toggler").addEventListener('click', toggleLight)
+  // document.querySelector(".toggler").addEventListener('click', toggleLight)
 
 //toggledark
-if(toggler === 'toggleLight'){
+if(toggler === 'toggleDark'){
   document.querySelector(".toggler").addEventListener('click', toggleDark);
+  
 
 }else{
   document.querySelector(".toggler").addEventListener('click', toggleLight)
