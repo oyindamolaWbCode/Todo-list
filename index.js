@@ -1,3 +1,4 @@
+
 //Grab the DOM
 const toggler = document.querySelector(".toggler");
 const todoCheck = document.getElementsByClassName("todo-check");
@@ -57,24 +58,27 @@ function result(){
 }
 
 //refresh
-window.onbeforeunload = function(){
-  localStorage.setItem("input", $('.mylist').val());
-}
+localStorage.input = `
+<div class="mylist">
+    <input type="checkbox" class="todo-check">
+    <p>${input.value}</p>
+    <div class="delete">
+     <img src="./images/icon-cross.svg" class="cancel-img">
+     </div>
+     </div>
+`;
 
-window.onload = function() {
+//retrieve
+document.getElementsByClassName('container-mylist').innerHTML = localStorage.input
 
-  var name = localStorage.getItem("input");
-  if (name !== null) $('.mylist').val("input");
-
-  // ...
-}
-
-// let refreshPage = 
-// todoText.addEventListener('submit', (e) =>{
+// let refreshPage = function(){
+//    todoText.addEventListener('submit', (e) =>{
 //   e.preventDefault();
 
 // })
 
+// }
+//
 //mark/check the todo when completed
 function containerList(){
   container.delete()
