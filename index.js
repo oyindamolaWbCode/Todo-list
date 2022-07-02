@@ -56,6 +56,25 @@ function result(){
     }
 }
 
+//refresh
+window.onbeforeunload = function(){
+  localStorage.setItem("input", $('.mylist').val());
+}
+
+window.onload = function() {
+
+  var name = localStorage.getItem("input");
+  if (name !== null) $('.mylist').val("input");
+
+  // ...
+}
+
+// let refreshPage = 
+// todoText.addEventListener('submit', (e) =>{
+//   e.preventDefault();
+
+// })
+
 //mark/check the todo when completed
 function containerList(){
   container.delete()
@@ -63,11 +82,7 @@ function containerList(){
 }
 
 //change of theme
-//togglelight
-
-  // document.querySelector(".toggler").addEventListener('click', toggleLight)
-
-//toggledark
+//toggledark and togglelight
 if(toggler === 'toggleDark'){
   document.querySelector(".toggler").addEventListener('click', toggleDark);
   
